@@ -1,35 +1,66 @@
 i.gryffindor-icon {
   background-image: url("../imgs/gryffindor-wordmark.svg");
-  background-repeat: no-repeat;
-  background-position: left;
 }
 i.slytherin-icon {
   background-image: url("../imgs/slytherin-wordmark.svg");
-  background-repeat: no-repeat;
-  background-position: left;
 }
 i.hufflepuff-icon {
   background-image: url("../imgs/hufflepuff-wordmark.svg");
-  background-repeat: no-repeat;
-  background-position: left;
 }
 i.ravenclaw-icon {
   background-image: url("../imgs/ravenclaw-wordmark.svg");
-  background-repeat: no-repeat;
-  background-position: left;
 }
-div.icon i {
-  opacity: .63;
+i.gryffindor-icon-tile {
+  background-image: url("../imgs/gryffindor-tile.svg");
+}
+i.slytherin-icon-tile {
+  background-image: url("../imgs/slytherin-tile.svg");
+}
+i.hufflepuff-icon-tile {
+  background-image: url("../imgs/hufflepuff-tile.svg");
+}
+i.ravenclaw-icon-tile {
+  background-image: url("../imgs/ravenclaw-tile.svg");
+}
+
+div.icon-tile i {
   display: block;
-  height: 50px;
   padding: 0;
   margin: auto;
+  width: 5.25rem;
+  height: 5.125rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div.icon-tile {
+  padding-top: 1.3125rem;
+  padding-bottom: 1.3125rem;
+  padding-left: 0.5625rem;
+  padding-right: 0.5625rem;
+  height: 7.75rem;
+  width: 6.375rem;
+}
+
+div.icon i {
+  display: block;
+  height: 3.125rem;
+  padding: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 div.icon {
   padding: .75rem 1rem;
   width: 200px;
 }
 
+
+.house-button-group {
+  margin-top: .5rem;
+}
+.house-button-group button[class*="button"] {
+  margin-right: .5rem;
+}
 
 
 section.house-container {
@@ -79,19 +110,19 @@ button[class*="-button"]:active {
   background-color: rgba(0,0,0,.1);
 }
 button[class*="-button"] div.icon {
-  padding: .25rem;
+  padding: .5rem;
 }
 
-button.gryffindor-button {
+button[class*="gryffindor-button"] {
   background-color: #C10000;
 }
-button.slytherin-button {
+button[class*="slytherin-button"] {
   background-color: #206905;
 }
-button.hufflepuff-button {
+button[class*="hufflepuff-button"] {
   background-color: #E4C300;
 }
-button.ravenclaw-button {
+button[class*="ravenclaw-button"] {
   background-color: #125186;
 }
 
@@ -110,4 +141,5 @@ button.ravenclaw-button {
 }
 #edit-house-form button {
   grid-row: auto;
+  margin: auto;
 }

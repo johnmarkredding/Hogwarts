@@ -50,11 +50,25 @@ class App extends Component {
     .then(res => res.json())
     .then((json) => this.handleUpdatedCharacter({...updatedChar, ...json}));
   }
+  deleteCharacter = (deletedChar) => {
+    fetch(`http://localhost:3001/characters/${deletedChar.id}`, {
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
+      }
+    })
+    .then(() => this.handleDeletedCharacter(deletedChar));
+  }
 
+  handleDeletedCharacter = (deletedChar) => {
+    let characters = this.state.characters.filter(char => char.id !== deletedChar.id);
+    this.setState({characters});
+  }
   handleUpdatedCharacter = (updatedChar) => {
     let characters = [...this.state.characters];
-    let characterToUpdate = characters.find(char => char.id === updatedChar.id);
-    characterToUpdate = updatedChar;
+    let index = characters.indexOf(characters.find(char => char.id === updatedChar.id));
+    characters[index] = updatedChar;
     this.setState({characters});
   }
   handleNewCharacter = (newChar) => {
@@ -81,7 +95,7 @@ class App extends Component {
     return (
       <div className="app">
         <SearchForm filterCharacters={this.filterCharacters} />
-        <Characters updateCharacter={this.updateCharacter} characters={this.filteredCharacters()}/>
+        <Characters deleteCharacter={this.deleteCharacter} updateCharacter={this.updateCharacter} characters={this.filteredCharacters()}/>
         <NewCharacterForm createCharacter={this.createCharacter} />
         <Houses updateCharacter={this.updateCharacter} characters={this.state.characters} />
       </div>

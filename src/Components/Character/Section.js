@@ -11,8 +11,19 @@ class CharacterDetails extends React.Component {
     this.props.setCharacter(null);
     this.props.toggleDetails();
   }
-  updateHouse = (character) => {
-    this.props.updateCharacter(character);
+  updateHouse = (e) => {
+    e.preventDefault();
+    e.persist();
+    let element = {};
+    if (e.target.className.includes("-icon")) {
+      element = e.target.parentNode.parentNode;
+    } else if (e.target.className === "icon") {
+      element = e.target.parentNode;
+    } else {
+      element = e.target;
+    }
+    this.props.character.house = element.dataset.house;
+    this.props.updateCharacter(this.props.character);
     this.toggleEditForm();
     this.props.toggleDetails();
   }

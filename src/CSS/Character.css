@@ -26,11 +26,18 @@ section.new-character form {
 }
 section.new-character form > div {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 section.new-character form > div > input {
   margin-top: .5rem;
   width: 100%;
+}
+section.new-character form > div > select {
+  display: block;
+}
+section.new-character form > div > select > option {
+  display: block;
+
 }
 
 article.gryffindor-card {
@@ -61,11 +68,11 @@ article[class*="-card"] > h3 {
   font-weight: 400;
 }
 article[class*="-card"] > * {
-  padding-left: .75rem;
-  padding-right: .75rem;
+  margin-left: .75rem;
+  margin-right: .75rem;
 }
 article[class*="-card"] > img {
-  padding: 0;
+  margin: 0;
 }
 article[class*="-card"] button[class*="-button"] {
   border: 1px solid rgba(0,0,0,.3);
@@ -92,8 +99,8 @@ article[class*="-tile"] > img {
 }
 
 
-
 article.character-section {
+  border-top: solid 1px rgba(0,0,0,.3);
   width: 100%;
   background-color: #fff;
   min-height: 30vh;
@@ -111,4 +118,14 @@ article.character-section > p {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 400;
+}
+
+
+button.delete-button {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  padding: .25rem;
+  margin: 0;
+  line-height: 1;
 }

@@ -2,17 +2,26 @@ import React from "react";
 import HouseIcon from "./Icon";
 
 class HouseButton extends React.Component {
-  handleClick = () => {
-    this.props.character.house = this.props.house;
-    this.props.callback(this.props.character);
+
+  getClassName() {
+    if (this.props.layout === "tile") {
+      return `${this.props.house.toLowerCase()}-button-tile`;
+    } else {
+      return `${this.props.house.toLowerCase()}-button`;
+    }
   }
   render(){
     return (
-      <button onClick={this.handleClick} className={`${this.props.house.toLowerCase()}-button`}>
-        <HouseIcon house={this.props.house} />
+      <button style={this.props.style} onClick={this.props.callback} data-house={this.props.house} className={this.getClassName()}>
+        <HouseIcon house={this.props.house} layout={this.props.layout} />
       </button>
     );
   }
 };
+
+HouseButton.defaultProps = {
+  layout: "normal",
+  style: null
+}
 
 export default HouseButton;
