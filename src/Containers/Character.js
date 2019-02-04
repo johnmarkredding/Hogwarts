@@ -3,10 +3,10 @@ import Character from "../Components/Character/Card";
 
 export default class CharacterContainer extends React.Component {
 
-  characterList = () => {
-    return this.props.characters.map(character => <Character key={character.name} character={character}/>);
+  characters = () => {
+    return this.props.characters.map(character => <Character updateCharacter={this.props.updateCharacter} key={character.id} character={character}/>);
   }
   render() {
-    return (<aside className="characters">{this.characterList()}</aside>);
+    return (<aside className="characters">{this.characters()}</aside>);
   }
 }

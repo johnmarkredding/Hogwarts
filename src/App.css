@@ -1,5 +1,8 @@
 body {
   background-color: #161616;
+  font-family: "Averia Serif Libre";
+}
+h1,h2,h3,h4,h5,h6 {
   font-family: "Proza Libre";
 }
 #root {

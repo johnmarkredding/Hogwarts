@@ -53,7 +53,21 @@
       "role": "professor",
       "image1": "https://fsmedia.imgix.net/21/fd/33/16/2844/4ec3/bae9/57d38001e216/sonserina.jpeg?rect=0%2C0%2C1920%2C959&dpr=2&auto=format%2Ccompress&w=650",
       "image2": "https://imgix.bustle.com/rehost/2016/9/13/4685a819-e442-4e36-af5b-9c8c42bfbf00.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70"
+    },
+    {
+      "name": "Parry Hotter",
+      "age": "71",
+      "role": "professor",
+      "image1": "http://www.univers-series.com/wp-content/uploads/2016/02/harrypotter.jpeg",
+      "image2": "https://timedotcom.files.wordpress.com/2014/07/301386_full1.jpg",
+      "house": "Ravenclaw",
+      "id": 7
     }
   ],
-  "houses": ["Gryffindor", "Slytherin", "HufflePuff", "Ravenclaw"]
+  "houses": [
+    "Gryffindor",
+    "Slytherin",
+    "HufflePuff",
+    "Ravenclaw"
+  ]
 }

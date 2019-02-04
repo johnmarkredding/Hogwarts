@@ -1,7 +1,22 @@
 import React from "react";
 
-const CharacterDetails = props => {
-  return <h1>DEETS</h1>;
+class CharacterTile extends React.Component {
+  setupDetailView = () => {
+    this.props.setCharacter(this.props.character);
+    this.props.toggleDetails();
+  }
+  render() {
+    return (
+      <article onClick={this.setupDetailView} className={`${this.props.character.house.toLowerCase()}-tile`}>
+        <img alt={this.props.character.name} src={this.props.character.image2}/>
+      </article>
+    );
+  }
 };
 
-export default CharacterDetails;
+CharacterTile.defaultProps = {
+  setCharacter: () => {},
+  toggleDetails: () => {}
+}
+
+export default CharacterTile;
